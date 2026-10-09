@@ -1,0 +1,44 @@
+
+# =============================
+# Qt / CMake Build
+# =============================
+build/
+build-*/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+.vs/
+
+# =============================
+# Compiled Files
+# =============================
+*.obj
+*.pdb
+*.ilk
+*.idb
+*.exe
+*.dll
+*.lib
+
+# =============================
+# Qt Generated Files
+# =============================
+*_autogen/
+moc_*.cpp
+ui_*.h
+qrc_*.cpp
+
+# =============================
+# Third-party Libraries
+# =============================
+src/opencv/build/
+src/ffmpeg/bin/
+src/ffmpeg/lib/
+
+# =============================
+# Temporary Files
+# =============================
+*.log
+*.tmp
+*.user
+*.user.*

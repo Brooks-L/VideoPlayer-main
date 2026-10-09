@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>420</width>
+    <height>288</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>420</width>
+    <height>288</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>16777215</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Video Player</string>
+  </property>
+  <property name="windowOpacity">
+   <double>1.000000000000000</double>
+  </property>
+  <property name="toolTip">
+   <string/>
+  </property>
+  <property name="toolTipDuration">
+   <number>-1</number>
+  </property>
+  <property name="autoFillBackground">
+   <bool>true</bool>
+  </property>
+  <property name="locale">
+   <locale language="English" country="NewZealand"/>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>28</width>
+    <height>28</height>
+   </size>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonTextOnly</enum>
+  </property>
+  <property name="documentMode">
+   <bool>false</bool>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>420</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuMedia">
+    <property name="title">
+     <string>Media</string>
+    </property>
+    <widget class="QMenu" name="menuRecent_Files">
+     <property name="title">
+      <string>Recent Files</string>
+     </property>
+    </widget>
+    <widget class="QMenu" name="menuSavedPlaylist">
+     <property name="title">
+      <string>Saved Playlists</string>
+     </property>
+    </widget>
+    <addaction name="actionOpen"/>
+    <addaction name="actionYoutube"/>
+    <addaction name="actionOpenNetworkUrl"/>
+    <addaction name="separator"/>
+    <addaction name="actionPlayList"/>
+    <addaction name="menuSavedPlaylist"/>
+    <addaction name="separator"/>
+    <addaction name="menuRecent_Files"/>
+    <addaction name="separator"/>
+    <addaction name="actionStop"/>
+    <addaction name="separator"/>
+    <addaction name="actionQuit"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+    <addaction name="actionHide_Play_Ctronl"/>
+    <addaction name="actionFullscreen"/>
+    <addaction name="separator"/>
+    <addaction name="actionAspect_Ratio"/>
+    <addaction name="actionOriginalSize"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionKeyboard_Usage"/>
+    <addaction name="actionAbout"/>
+    <addaction name="actionAbout_QT"/>
+   </widget>
+   <widget class="QMenu" name="menuStyle">
+    <property name="title">
+     <string>Style</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuCV">
+    <property name="title">
+     <string>CV</string>
+    </property>
+    <addaction name="actionGrayscale"/>
+    <addaction name="actionMirro"/>
+    <addaction name="actionTransform"/>
+    <addaction name="separator"/>
+    <addaction name="actionRotate"/>
+    <addaction name="actionRepeat"/>
+    <addaction name="actionEqualizeHist"/>
+    <addaction name="actionThreshold"/>
+    <addaction name="actionThreshold_Adaptive"/>
+    <addaction name="actionReverse"/>
+    <addaction name="actionColorReduce"/>
+    <addaction name="actionGamma"/>
+    <addaction name="actionContrastBright"/>
+    <addaction name="actionBlur"/>
+    <addaction name="actionCanny"/>
+    <addaction name="actionSobel"/>
+    <addaction name="actionLaplacian"/>
+    <addaction name="actionScharr"/>
+    <addaction name="actionPrewitt"/>
+    <addaction name="actionRemoveCV"/>
+    <addaction name="separator"/>
+    <addaction name="actionTest_CV"/>
+   </widget>
+   <widget class="QMenu" name="menuTools">
+    <property name="title">
+     <string>Tools</string>
+    </property>
+    <widget class="QMenu" name="menuAudio_visualize">
+     <property name="title">
+      <string>Audio visualize</string>
+     </property>
+     <addaction name="actionBar"/>
+     <addaction name="actionLine"/>
+     <addaction name="actionPie"/>
+     <addaction name="separator"/>
+     <addaction name="actionSampling"/>
+     <addaction name="actionFrequency"/>
+    </widget>
+    <addaction name="actionHardware_decode"/>
+    <addaction name="actionLoop_Play"/>
+    <addaction name="separator"/>
+    <addaction name="actionMedia_Info"/>
+    <addaction name="menuAudio_visualize"/>
+   </widget>
+   <addaction name="menuMedia"/>
+   <addaction name="menuView"/>
+   <addaction name="menuTools"/>
+   <addaction name="menuCV"/>
+   <addaction name="menuStyle"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <action name="actionOpen">
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="actionHelp">
+   <property name="text">
+    <string>Help</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="text">
+    <string>Quit</string>
+   </property>
+  </action>
+  <action name="actionTest">
+   <property name="text">
+    <string>Test</string>
+   </property>
+  </action>
+  <action name="actionStop">
+   <property name="text">
+    <string>Stop</string>
+   </property>
+  </action>
+  <action name="actionFullscreen">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Full screen</string>
+   </property>
+  </action>
+  <action name="actionYoutube">
+   <property name="text">
+    <string>Open Youtube</string>
+   </property>
+  </action>
+  <action name="actionAspect_Ratio">
+   <property name="text">
+    <string>Aspect Ratio</string>
+   </property>
+  </action>
+  <action name="actionHide_Play_Ctronl">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Hide Play Control</string>
+   </property>
+  </action>
+  <action name="actionGrayscale">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Grayscale</string>
+   </property>
+  </action>
+  <action name="actionMirro">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Mirro</string>
+   </property>
+  </action>
+  <action name="actionTransform">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Transform</string>
+   </property>
+  </action>
+  <action name="actionHardware_decode">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Open DXVA2</string>
+   </property>
+  </action>
+  <action name="actionAbout_QT">
+   <property name="text">
+    <string>About Qt</string>
+   </property>
+  </action>
+  <action name="actionLoop_Play">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Loop Play</string>
+   </property>
+  </action>
+  <action name="actionMedia_Info">
+   <property name="text">
+    <string>Media Info</string>
+   </property>
+  </action>
+  <action name="actionTest_CV">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Test_CV</string>
+   </property>
+  </action>
+  <action name="actionRotate">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Rotation</string>
+   </property>
+  </action>
+  <action name="actionRepeat">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Repeat</string>
+   </property>
+  </action>
+  <action name="actionEqualizeHist">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Histogram Equalization</string>
+   </property>
+  </action>
+  <action name="actionThreshold">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Binary Threshold</string>
+   </property>
+  </action>
+  <action name="actionThreshold_Adaptive">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Adaptive Threshold</string>
+   </property>
+  </action>
+  <action name="actionReverse">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Reverse</string>
+   </property>
+  </action>
+  <action name="actionColorReduce">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Color Reduce</string>
+   </property>
+  </action>
+  <action name="actionGamma">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Gamma</string>
+   </property>
+  </action>
+  <action name="actionContrastBright">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Contrast Bright</string>
+   </property>
+  </action>
+  <action name="actionCanny">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Canny </string>
+   </property>
+  </action>
+  <action name="actionBlur">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Smooth</string>
+   </property>
+  </action>
+  <action name="actionSobel">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Sobel</string>
+   </property>
+  </action>
+  <action name="actionLaplacian">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Laplacian</string>
+   </property>
+  </action>
+  <action name="actionScharr">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Scharr</string>
+   </property>
+  </action>
+  <action name="actionPrewitt">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Prewitt</string>
+   </property>
+  </action>
+  <action name="actionRemoveCV">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Remove Selection</string>
+   </property>
+  </action>
+  <action name="actionKeyboard_Usage">
+   <property name="text">
+    <string>Tips</string>
+   </property>
+  </action>
+  <action name="actionLine">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Line</string>
+   </property>
+  </action>
+  <action name="actionBar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Bar</string>
+   </property>
+  </action>
+  <action name="actionSampling">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Sampling</string>
+   </property>
+  </action>
+  <action name="actionFrequency">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Frequency</string>
+   </property>
+  </action>
+  <action name="actionPlayList">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Playlist</string>
+   </property>
+  </action>
+  <action name="actionOpenNetworkUrl">
+   <property name="text">
+    <string>Open Network Url</string>
+   </property>
+  </action>
+  <action name="actionOriginalSize">
+   <property name="text">
+    <string>Original Size</string>
+   </property>
+  </action>
+  <action name="actionPie">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Pie</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
